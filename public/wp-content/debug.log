@@ -1,2 +1,10 @@
 [27-Nov-2020 10:33:52 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /srv/http/wp-includes/wp-db.php on line 1635
 [27-Nov-2020 10:33:52 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /srv/http/wp-includes/wp-db.php on line 1635
+[27-Nov-2020 14:12:46 UTC] PHP Warning:  scandir(http://localhost/wp-content/themes/alex): failed to open dir: not implemented in /srv/cms2020-wordpress/public/wp-content/themes/alex/functions.php on line 3
+[27-Nov-2020 14:12:46 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /srv/cms2020-wordpress/public/wp-content/themes/alex/functions.php on line 3
+[27-Nov-2020 14:12:46 UTC] PHP Warning:  scandir(http://localhost/wp-content/themes/alex): failed to open dir: not implemented in /srv/cms2020-wordpress/public/wp-content/themes/alex/functions.php on line 3
+[27-Nov-2020 14:12:46 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /srv/cms2020-wordpress/public/wp-content/themes/alex/functions.php on line 3
+[27-Nov-2020 14:12:46 UTC] PHP Warning:  scandir(http://localhost/wp-content/themes/alex): failed to open dir: not implemented in /srv/cms2020-wordpress/public/wp-content/themes/alex/functions.php on line 3
+[27-Nov-2020 14:12:46 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /srv/cms2020-wordpress/public/wp-content/themes/alex/functions.php on line 3
+[27-Nov-2020 14:12:46 UTC] PHP Warning:  scandir(http://localhost/wp-content/themes/alex): failed to open dir: not implemented in /srv/cms2020-wordpress/public/wp-content/themes/alex/functions.php on line 3
+[27-Nov-2020 14:12:46 UTC] PHP Warning:  scandir(): (errno 2): No such file or directory in /srv/cms2020-wordpress/public/wp-content/themes/alex/functions.php on line 3

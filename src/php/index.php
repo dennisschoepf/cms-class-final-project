@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!--<link href="./styles/main.scss" rel="stylesheet" />-->
   <title>Alex Mayer</title>
+  <?php wp_head(); ?>
 </head>
 
 <body>
+  <?php wp_body_open(); ?>
   <header>
     <nav>
       <h1>Alex Mayer</h1>
@@ -158,6 +159,7 @@
       <p>Freepik (http://www.freepik.com) / www.flaticon.com</p>
     </article>
   </footer>
+  <?php wp_footer(); ?>
   <!--<script src="./scripts/main.js"></script>-->
 </body>
 
