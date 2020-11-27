@@ -21,4 +21,15 @@ function add_theme_scripts()
   wp_enqueue_script('admin-script', get_template_directory_uri() . '/admin.js');
 }
 
+function register_my_menus()
+{
+  register_nav_menus(
+    array(
+      'header-menu' => __('Header Menu'),
+      'footer-menu' => __('Footer Menu')
+    )
+  );
+}
+
+add_action('init', 'register_my_menus');
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
