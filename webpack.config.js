@@ -154,6 +154,11 @@ module.exports = {
         typeTo: 'dir',
         copyUnmodified: true
       },
+      { from: 'src/images/*',
+        to: `${path.resolve(__dirname, themeFolder)}/images`,
+        copyUnmodified: true,
+        flatten: true,
+      },
     ]),
 
     new HtmlWebpackPlugin({
