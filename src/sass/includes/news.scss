@@ -7,6 +7,12 @@ section#news {
     li {
       font-size: $font-size-l;
       line-height: 3.2rem;
+      display: flex;
+      flex-wrap: wrap;
+
+      & > * {
+        margin-right: 1rem;
+      }
 
       &:not(:last-child) {
         margin-bottom: 1.5rem;

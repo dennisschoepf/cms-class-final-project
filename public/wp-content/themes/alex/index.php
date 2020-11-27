@@ -33,42 +33,24 @@
           wp_reset_postdata();
           ?>
         </ul>
-        <!--<ul>
-          <li>
-            <a href="/" class="bg-accent-bright">
-              <h3>Design</h3>
-              <img src="<?php echo get_template_directory_uri() ?>/images/design_icon.svg" alt="Design Icon" />
-            </a>
-          </li>
-          <li>
-            <a href="/" class="bg-accent-reg">
-              <h3>Strategie</h3>
-              <img src="<?php echo get_template_directory_uri() ?>/images/strategy_icon.svg" alt="Strategy Icon" />
-            </a>
-          </li>
-          <li>
-            <a href="/" class="bg-accent-dark">
-              <h3>Consulting</h3>
-              <img src="<?php echo get_template_directory_uri() ?>/images/consulting_icon.svg" alt="Consulting Icon" />
-            </a>
-          </li>
-        </ul>-->
       </section>
       <section class="maxwidthcontainer" id="news">
         <h2>News</h2>
         <ul>
-          <li>
-            <a href="/">365 Postkarten</a> - Eine Liebeserklärung für jeden Tag!
-            <a href="/">[mehr erfahren]</a>
-          </li>
-          <li>
-            <a href="/">Award Nominierung</a> - Tolle News: Ich bin bei der
-            Endauswahl 2020! <a href="/">[mehr erfahren]</a>
-          </li>
-          <li>
-            <a href="/">CMYK erklärt</a> - Der neueste
-            <a href="/">Blog</a>-Eintrag <a href="/">[mehr erfahren]</a>
-          </li>
+          <?php
+          $news_query = new WP_Query(array('category_name' => 'news', 'order' => 'DESC', 'posts_per_page' => 3));
+          if ($news_query->have_posts()) :
+            while ($news_query->have_posts()) : $news_query->the_post(); ?>
+              <li>
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><span>-</span><?php the_excerpt() ?>
+                <a href="<?php the_permalink(); ?>">[mehr erfahren]</a>
+              </li>
+            <?php endwhile;
+          else : ?>
+            Erster Post demnächst...
+          <?php endif;
+          wp_reset_postdata();
+          ?>
         </ul>
       </section>
       <section class="maxwidthcontainer" id="references">
