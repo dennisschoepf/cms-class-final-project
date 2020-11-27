@@ -103,6 +103,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     padding: 6rem 0;
+    overflow-y: hidden;
 
     img {
       position: absolute;
@@ -111,6 +112,7 @@ header {
       right: 0;
       bottom: 0;
       z-index: -1;
+      object-fit: cover;
     }
 
     article {

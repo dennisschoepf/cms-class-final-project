@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development",
-    "watch": "webpack --watch --mode development"
+    "watch": "webpack --watch --mode development",
+    "deploy": "npm run build && dep deploy"
   },
   "keywords": [],
   "author": "Dennis Schoepf, Maximilian Schmitt",
