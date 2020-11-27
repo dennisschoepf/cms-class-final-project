@@ -41,3 +41,4 @@ add_filter('upload_mimes', 'cc_mime_types');
 add_action('init', 'register_my_menus');
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
 add_theme_support('post-thumbnails');
+add_filter('acf/settings/remove_wp_meta_box', '__return_false');
