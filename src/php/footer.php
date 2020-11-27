@@ -41,5 +41,9 @@
     </ul>
     <h4>Icons</h4>
     <p>Freepik (http://www.freepik.com) / www.flaticon.com</p>
+    <h4>Navigation</h4>
+    <nav class="footer-menu">
+      <?php wp_nav_menu(array('theme_location' => 'footer-menu')); ?>
+    </nav>
   </article>
 </footer>

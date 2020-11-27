@@ -1,8 +1,7 @@
 <header>
   <nav>
     <h1>Alex Mayer</h1>
-    <?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>></li>
-    </ul>-->
+    <?php wp_nav_menu(array('theme_location' => 'header-menu')); ?>
     <button id="menu-trigger" class="hamburger hamburger--slider" type="button">
       <span class="hamburger-box">
         <span class="hamburger-inner"></span>

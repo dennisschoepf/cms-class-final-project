@@ -12,6 +12,25 @@ footer {
     padding: 1.5rem 0 0 0;
     margin-bottom: 3.5rem;
 
+    &.footer-menu {
+      display: block;
+
+      ul {
+        display: block;
+        color: #ffffff;
+
+        li {
+          display: block;
+          margin-right: auto;
+
+          &:first-child::after {
+            content: '';
+            margin: 0 0.6rem;
+          }
+        }
+      }
+    }
+
     @include breakpoint(0, 610px) {
       small {
         display: block;
