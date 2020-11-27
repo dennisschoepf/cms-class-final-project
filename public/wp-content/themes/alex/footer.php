@@ -1,10 +1,7 @@
 <footer>
   <nav>
-    <small>© Alex Mayer 2020</small>
-    <ul>
-      <li><a href="/">Impressum</a></li>
-      <li><a href="/">Datenschutzerklärung</a></li>
-    </ul>
+    <small>© Alex Mayer <?php echo date("Y"); ?></small>
+    <?php wp_nav_menu(array('theme_location' => 'footer-menu')); ?>
   </nav>
   <article>
     <p>
@@ -42,8 +39,5 @@
     <h4>Icons</h4>
     <p>Freepik (http://www.freepik.com) / www.flaticon.com</p>
     <h4>Navigation</h4>
-    <nav class="footer-menu">
-      <?php wp_nav_menu(array('theme_location' => 'footer-menu')); ?>
-    </nav>
   </article>
 </footer>

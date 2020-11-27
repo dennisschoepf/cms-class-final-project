@@ -60,9 +60,28 @@
           $references_query = new WP_Query(array('category_name' => 'referenzen', 'order' => 'DESC', 'posts_per_page' => 3));
           if ($references_query->have_posts()) :
             while ($references_query->have_posts()) : $references_query->the_post(); ?>
-              <li>
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><span>-</span><?php the_excerpt() ?>
-                <a href="<?php the_permalink(); ?>">[mehr erfahren]</a>
+              <li class="<?php the_field('css_class'); ?>">
+                <div class="image-wrapper">
+                  <img src="<?php the_field('image'); ?>" alt="<?php the_title(); ?>" />
+                </div>
+                <?php
+                if (strcmp(get_field('css_class'), 'mueller-ag') === 0) { ?>
+                  <blockquote>
+                    <span class="blockquote-content"><?php the_field('quote'); ?></span>
+                  </blockquote>
+                <?php } else { ?>
+                  <blockquote><?php the_field('quote'); ?></blockquote>
+                <?php } ?>
+                <cite><?php the_title(); ?> <br> <?php the_field('company'); ?></cite>
+                <?php
+                if (strcmp(get_field('css_class'), 'mueller-ag') === 0) { ?>
+                  <div class="quotation-decoration">
+                    <img src="<?php echo get_template_directory_uri() ?>/images/quotation_icon.svg" alt="Quotation" />
+                  </div>
+                <?php }
+                if (strcmp(get_field('css_class'), 'tom-herzog') === 0) { ?>
+                  <div class="fill-item"></div>
+                <?php } ?>
               </li>
             <?php endwhile;
           else : ?>
@@ -70,39 +89,6 @@
           <?php endif;
           wp_reset_postdata();
           ?>
-          <li class="tina-ubuntu">
-            <div class="image-wrapper">
-              <img src="<?php echo get_template_directory_uri() ?>/images/img_ref2.jpg" alt="Tina Ubuntu, CEO Headless Ltd." />
-            </div>
-            <blockquote>
-              Alex' Redesign hat maßgeblich mitgeholfen, unseren Umsatz um 20%
-              in die Höhe zu treiben!
-            </blockquote>
-            <cite>Tina Ubuntu, <br> CEO Headless Ltd.</cite>
-          </li>
-          <li class="tom-herzog">
-            <div class="image-wrapper">
-              <img src="<?php echo get_template_directory_uri() ?>/images/img_ref1.jpg" alt="Tom Herzog, Cutter's Finest" />
-            </div>
-            <blockquote>
-              Große Webkunst - Keine Kunst mit Alex Mayer!
-            </blockquote>
-            <cite>Tom Herzog, <br> Cutter's Finest</cite>
-            <div class="fill-item"></div>
-          </li>
-          <li class="mueller-ag">
-            <div class="image-wrapper">
-              <img src="<?php echo get_template_directory_uri() ?>/images/img_ref3.jpg" alt="Vorstand Mueller AG" />
-            </div>
-            <blockquote>
-              <span class="blockquote-content">Das Store-Konzept von Alex Mayer hat unsere größten Erwartungen
-                übertroffen.</span>
-            </blockquote>
-            <cite>Vorstand Müller AG<br />KR Ernst Anker, Dr. Florian Eisner</cite>
-            <div class="quotation-decoration">
-              <img src="<?php echo get_template_directory_uri() ?>/images/quotation_icon.svg" alt="Quotation" />
-            </div>
-          </li>
         </ul>
       </section>
     <?php } else {
