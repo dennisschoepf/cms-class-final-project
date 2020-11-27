@@ -41,6 +41,10 @@ host('vm-olive.multimediatechnology.at')
 // Composer
 set('composer_action', false);
 
+task('deploy:update_code', function () {
+  upload('public/', '{{release_path}}');
+});
+
 // Tasks
 desc('Deploy your project');
 task('deploy', [
