@@ -1,0 +1,21 @@
+section#news {
+  ul {
+    background-color: $accent-color-important;
+    border-radius: $border-radius;
+    padding: 1.5rem 1rem;
+
+    li {
+      font-size: $font-size-l;
+      line-height: 3.2rem;
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: $primary-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+[27-Nov-2020 10:33:52 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /srv/http/wp-includes/wp-db.php on line 1635
+[27-Nov-2020 10:33:52 UTC] PHP Warning:  mysqli_real_connect(): (HY000/2002): No such file or directory in /srv/http/wp-includes/wp-db.php on line 1635
