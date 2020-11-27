@@ -16,6 +16,24 @@
       <section class="maxwidthcontainer" id="services">
         <h2>Leistungen</h2>
         <ul>
+          <?php
+          $services_query = new WP_Query(array('category_name' => 'leistungen', 'order' => 'DESC', 'posts_per_page' => 3));
+          if ($services_query->have_posts()) :
+            while ($services_query->have_posts()) : $services_query->the_post(); ?>
+              <li>
+                <a href="<?php the_permalink(); ?>" class="<?php the_title(); ?>">
+                  <h3><?php the_title(); ?></h3>
+                  <?php the_post_thumbnail() ?>
+                </a>
+              </li>
+            <?php endwhile;
+          else : ?>
+            Erster Post demnächst...
+          <?php endif;
+          wp_reset_postdata();
+          ?>
+        </ul>
+        <!--<ul>
           <li>
             <a href="/" class="bg-accent-bright">
               <h3>Design</h3>
@@ -34,7 +52,7 @@
               <img src="<?php echo get_template_directory_uri() ?>/images/consulting_icon.svg" alt="Consulting Icon" />
             </a>
           </li>
-        </ul>
+        </ul>-->
       </section>
       <section class="maxwidthcontainer" id="news">
         <h2>News</h2>
