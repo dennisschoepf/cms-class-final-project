@@ -9,9 +9,20 @@
     </button>
   </nav>
   <section id="hero">
-    <img src="<?php echo get_template_directory_uri() ?>/images/hero.jpg" alt="Design Icon" />
+    <?php if (has_post_thumbnail()) {
+      the_post_thumbnail('full');
+    } ?>
     <article>
-      <h2><span>Glänzende Ideen für leuchtende Augen</span></h2>
+      <h2>
+        <span>
+          <?php
+          if (get_post_custom_values('herotext')) {
+            $herotext = get_post_custom_values('herotext')[0];
+            echo $herotext;
+          }
+          ?>
+        </span>
+      </h2>
       <button>Angebot einholen</button>
     </article>
   </section>

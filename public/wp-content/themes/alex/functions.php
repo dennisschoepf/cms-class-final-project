@@ -33,3 +33,4 @@ function register_my_menus()
 
 add_action('init', 'register_my_menus');
 add_action('wp_enqueue_scripts', 'add_theme_scripts');
+add_theme_support('post-thumbnails');
