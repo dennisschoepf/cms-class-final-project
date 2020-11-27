@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack --watch --mode development"
+    "start": "webpack-dev-server --mode development",
+    "watch": "webpack --watch --mode development"
   },
   "keywords": [],
   "author": "Dennis Schoepf, Maximilian Schmitt",

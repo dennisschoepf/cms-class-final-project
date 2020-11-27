@@ -1,7 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const glob = require('glob');
@@ -9,34 +9,33 @@ const path = require('path');
 
 const themeName = 'alex';
 const pluginFolder = `public/wp-content/plugins`;
-const themeFolder  = `public/wp-content/themes/${themeName}`;
-const phpServerUrl = "localhost";
+const themeFolder = `public/wp-content/themes/${themeName}`;
+const phpServerUrl = 'localhost';
 
 module.exports = {
-  entry: { main:'./src/index.js', admin: './src/sass/main.scss' },
+  entry: { main: './src/index.js', admin: './src/sass/main.scss' },
   output: {
     path: path.resolve(__dirname, themeFolder),
   },
 
   devServer: {
-    contentBase: './dist'
+    contentBase: path.resolve(__dirname, themeFolder),
   },
 
-  devtool: "none",
+  devtool: 'none',
   module: {
     rules: [
-
       // use babel for all js files
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-shorthand-properties']
-          }
-        }
+            plugins: ['@babel/plugin-transform-shorthand-properties'],
+          },
+        },
       },
 
       // convert SASS to CSS, then minify and autoprefix
@@ -44,75 +43,82 @@ module.exports = {
         test: /\.(scss|css)$/,
         use: [
           MiniCssExtractPlugin.loader, // extract CSS into separate file
-          { loader: "css-loader", // translates CSS into CommonJS
-            options: {
-              sourceMap: true
-            }
-          },
-          { loader: "postcss-loader", // autoprefixes CSS
-            options: {
-              sourceMap: true
-            }
-          },
-          { loader: "sass-loader", // compiles Sass to CSS, using Node Sass by default
+          {
+            loader: 'css-loader', // translates CSS into CommonJS
             options: {
               sourceMap: true,
-            }
+            },
           },
-          { loader: "import-glob-loader" }
-        ]
+          {
+            loader: 'postcss-loader', // autoprefixes CSS
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader', // compiles Sass to CSS, using Node Sass by default
+            options: {
+              sourceMap: true,
+            },
+          },
+          { loader: 'import-glob-loader' },
+        ],
       },
 
       // include fonts
       {
         test: /\.(woff|woff2|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts/'
-          }
-        }]
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
       },
 
       // include partials (must be located in `src/partials/`)
       {
         test: /\_.*\.html$/,
         include: [path.resolve(__dirname, 'src/partials')],
-        use: [{
-          loader: 'html-loader',
-          options: {
-            root: path.resolve(__dirname, 'src')
-          }
-        }]
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              root: path.resolve(__dirname, 'src'),
+            },
+          },
+        ],
       },
 
       // compress and include images
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          { loader: 'file-loader',
+          {
+            loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'images/'
-            }
+              outputPath: 'images/',
+            },
           },
 
           {
             loader: 'image-webpack-loader',
-          }
-        ]
-      }
-    ]
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
-
     // Sync webpage via proxy-server
     new BrowserSyncPlugin(
       {
-        proxy: phpServerUrl ,
-        open: false
+        proxy: phpServerUrl,
+        open: false,
       },
       {
         // reload: false
@@ -123,38 +129,45 @@ module.exports = {
 
     // extract css into file
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
+      filename: '[name].[contenthash].css',
     }),
 
     new CopyWebpackPlugin([
-      { from: 'src/favicons/*',
+      {
+        from: 'src/favicons/*',
         to: path.resolve(__dirname, 'public/'),
-        flatten: true
+        flatten: true,
       },
-      { from: 'src/style.css',
+      {
+        from: 'src/style.css',
         to: path.resolve(__dirname, themeFolder),
-        flatten: true
+        flatten: true,
       },
-      { from: 'src/screenshot.png',
+      {
+        from: 'src/screenshot.png',
         to: path.resolve(__dirname, themeFolder),
-        flatten: true
+        flatten: true,
       },
-      { from: 'src/wp-config.php',
+      {
+        from: 'src/wp-config.php',
         to: path.resolve(__dirname, 'public/'),
-        flatten: true
+        flatten: true,
       },
-      { from: 'src/templates/*',
+      {
+        from: 'src/templates/*',
         to: `${path.resolve(__dirname, themeFolder)}/templates`,
         flatten: true,
-        copyUnmodified: true
+        copyUnmodified: true,
       },
-      { context: './src/php',
+      {
+        context: './src/php',
         from: '**',
         to: '',
         typeTo: 'dir',
-        copyUnmodified: true
+        copyUnmodified: true,
       },
-      { from: 'src/images/*',
+      {
+        from: 'src/images/*',
         to: `${path.resolve(__dirname, themeFolder)}/images`,
         copyUnmodified: true,
         flatten: true,
@@ -166,10 +179,10 @@ module.exports = {
       filename: 'functions.php',
       hash: true,
       inject: false,
-    })
+    }),
   ],
 
   optimization: {
-    minimizer: [new TerserPlugin()]
-  }
-}
+    minimizer: [new TerserPlugin()],
+  },
+};
