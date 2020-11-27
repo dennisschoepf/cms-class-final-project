@@ -1,21 +1,21 @@
-# CMS2020 - Screendesign Assignment
+# CMS 2020 - Wordpress Alex Mayer
 
-Static screendesign online at: http://cms2020screendesign.dnsc.io and VM IP
-
-## Development
+## Lokale Entwicklung
 
 ```sh
-npm i
-npm run start
+npm run watch
 ```
 
 ## Deployment
 
-### Requirements
-
-- scp has to be installed
-- Public key of current machine has to be added to the VM
-
 ```sh
 npm run deploy
 ```
+
+Dadurch wird das Theme lokal gebaut und der `/public` Folder dann auf die CMS VM deployed. WP-Uploads und WP-Config werden mit Symlinks für alle Deployments verfügbar gemacht.
+
+Die Website ist über: [VM Olive](http://vm-olive.multimediatechnology.at/) zu erreichen.
+
+## Known issues
+
+- `npm run start` scheint lokal nicht zu funktionieren, `npm run watch` dagegen schon
