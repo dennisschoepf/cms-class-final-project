@@ -5,10 +5,10 @@ namespace Deployer;
 require 'recipe/common.php';
 
 // Project name
-set('application', 'alex');
+set('application', 'andy');
 
 // Project repository
-set('repository', 'git@github.com:dennisschoepf/wpalex_max_dennis.git');
+set('repository', 'git@github.com:dennisschoepf/andyhuber_wp.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true);
@@ -35,7 +35,7 @@ set('allow_anonymous_stats', false);
 host('vm-olive.multimediatechnology.at')
   ->user('admin')
   ->port(5412)
-  ->identityFile('/root/.ssh/cms2020_rsa')
+  ->identityFile('/home/dennis/.ssh/cms_rsa')
   ->set('deploy_path', '~/{{application}}');
 
 // Composer
