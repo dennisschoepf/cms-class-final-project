@@ -7,7 +7,7 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const glob = require('glob');
 const path = require('path');
 
-const themeName = 'alex';
+const themeName = 'andyhuber';
 const pluginFolder = `public/wp-content/plugins`;
 const themeFolder = `public/wp-content/themes/${themeName}`;
 const phpServerUrl = 'localhost';
@@ -149,37 +149,12 @@ module.exports = {
         flatten: true,
       },
       {
-        from: 'src/wp-config.php',
-        to: path.resolve(__dirname, 'public/'),
-        flatten: true,
-      },
-      {
-        from: 'src/templates/*',
-        to: `${path.resolve(__dirname, themeFolder)}/templates`,
-        flatten: true,
-        copyUnmodified: true,
-      },
-      {
-        context: './src/php',
-        from: '**',
-        to: '',
-        typeTo: 'dir',
-        copyUnmodified: true,
-      },
-      {
         from: 'src/images/*',
         to: `${path.resolve(__dirname, themeFolder)}/images`,
         copyUnmodified: true,
         flatten: true,
       },
     ]),
-
-    new HtmlWebpackPlugin({
-      template: 'src/php/functions.php',
-      filename: 'functions.php',
-      hash: true,
-      inject: false,
-    }),
   ],
 
   optimization: {
