@@ -4,4 +4,4 @@ dist
 #*
 *~
 src/wp-config.php
-public
+public/wp-config.php
