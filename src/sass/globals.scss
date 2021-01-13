@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Surfing Capital';
-  src: url('SurfingCapital.woff2') format('woff2'),
-    url('SurfingCapital.woff') format('woff');
+  src: url('../fonts/SurfingCapital.woff2') format('woff2'),
+    url('../fonts/SurfingCapital.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('Poppins-ExtraBold.woff2') format('woff2'),
-    url('Poppins-ExtraBold.woff') format('woff');
+  src: url('../fonts/Poppins-ExtraBold.woff2') format('woff2'),
+    url('../fonts/Poppins-ExtraBold.woff') format('woff');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('Poppins-Medium.woff2') format('woff2'),
-    url('Poppins-Medium.woff') format('woff');
+  src: url('../fonts/Poppins-Medium.woff2') format('woff2'),
+    url('../fonts/Poppins-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;

@@ -139,6 +139,12 @@ module.exports = {
         flatten: true,
       },
       {
+        from: 'src/theme/*',
+        to: path.resolve(__dirname, themeFolder),
+        copyUnmodified: true,
+        flatten: false,
+      },
+      {
         from: 'src/style.css',
         to: path.resolve(__dirname, themeFolder),
         flatten: true,
