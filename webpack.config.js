@@ -78,21 +78,6 @@ module.exports = {
           },
         ],
       },
-
-      // include partials (must be located in `src/partials/`)
-      {
-        test: /\_.*\.html$/,
-        include: [path.resolve(__dirname, 'src/partials')],
-        use: [
-          {
-            loader: 'html-loader',
-            options: {
-              root: path.resolve(__dirname, 'src'),
-            },
-          },
-        ],
-      },
-
       // compress and include images
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -139,7 +124,7 @@ module.exports = {
         flatten: true,
       },
       {
-        from: 'src/theme/*',
+        from: 'src/theme',
         to: path.resolve(__dirname, themeFolder),
         copyUnmodified: true,
         flatten: false,
