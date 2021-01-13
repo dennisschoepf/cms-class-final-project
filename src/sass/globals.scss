@@ -52,9 +52,11 @@
 html {
   font-family: $font-reg;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: $font-weight;
+  background-color: white;
 }
 
 body {
   font-size: $font-size-m;
+  background-color: white;
 }

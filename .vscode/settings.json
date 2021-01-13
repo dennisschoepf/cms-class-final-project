@@ -2,9 +2,9 @@
   "emeraldwalk.runonsave": {
     "commands": [
       {
-        "match": "/home/dennis/Repositories/andyhuber_wp/src/.*",
+        "match": ".*",
         "isAsync": false,
-        "cmd": "npm run build"
+        "cmd": "cd ${workspaceFolder} && npm run build"
       }
     ]
   }
