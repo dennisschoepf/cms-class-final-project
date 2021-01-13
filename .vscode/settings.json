@@ -1,0 +1,11 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "/home/dennis/Repositories/andyhuber_wp/src/.*",
+        "isAsync": false,
+        "cmd": "npm run build"
+      }
+    ]
+  }
+}
