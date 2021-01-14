@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include 'partial/hero.twig' %}
+	{% include 'partial/about.twig' %}
+	<h2>{{ post.inventions_headline }}</h2>
+	{% for invention in inventions %}
+		{{ invention.thumbnail_text }}
+	{% endfor %}
+
+	<h2>{{ post.stories_headline }}</h2>
+	{% for story in stories %}
+		{{ story.thumbnail_text }}
+	{% endfor %}
+{% endblock %}
