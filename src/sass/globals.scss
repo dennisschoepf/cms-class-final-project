@@ -60,3 +60,10 @@ body {
   font-size: $font-size-m;
   background-color: white;
 }
+
+h1,
+h2 {
+  font-size: $font-size-xxl;
+  line-height: $line-height-xxl;
+  font-weight: $font-weight-bold;
+}

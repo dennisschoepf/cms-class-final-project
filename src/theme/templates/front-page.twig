@@ -3,13 +3,33 @@
 {% block content %}
 	{% include 'partial/hero.twig' %}
 	{% include 'partial/about.twig' %}
-	<h2>{{ post.inventions_headline }}</h2>
-	{% for invention in inventions %}
-		{{ invention.thumbnail_text }}
-	{% endfor %}
-
-	<h2>{{ post.stories_headline }}</h2>
-	{% for story in stories %}
-		{{ story.thumbnail_text }}
-	{% endfor %}
-{% endblock %}
+	<section id="inventions" class="maxwidthcontainer home-section">
+		<h2>{{ post.inventions_headline }}</h2>
+		<ul class="inventions-list">
+			{% for invention in inventions %}
+				{% if invention.post_title %}
+					<li class="invention-thumbnail">
+						<a href="{{ invention.link }}">
+							<h3>{{ invention.post_title }}</h3>
+							<p>{{ invention.thumbnail_text }}</p>
+						</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</section>
+	<section id="stories" class="maxwidthcontainer home-section">
+		<h2>{{ post.stories_headline }}</h2>
+		<ul class="stories-list">
+			{% for story in stories %}
+				<li class="invention-thumbnail">
+					<a href="{{ story.link }}">
+						<h4>{{ story.thumbnail_title}}
+							<h3>{{ story.post_title }}</h3>
+							<p>{{ story.thumbnail_text }}</p>
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</section>
+	{% endblock %}
