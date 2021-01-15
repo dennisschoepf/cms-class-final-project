@@ -21,12 +21,12 @@ header {
 
       &:hover,
       &.active {
-        border-bottom: 3px solid $color-dark-blue;
+        border-bottom: 3px solid $color-blue-dark;
       }
     }
 
     li:not(:last-child) {
-      margin-right: 2rem;
+      margin-right: 3.5rem;
     }
   }
 }
