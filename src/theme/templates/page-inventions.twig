@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<section id="page-content" class="maxwidthcontainer">
+		<h1 class="article-h1">{{post.title}}</h1>
+		<div class="article-body">
+			{{post.content}}
+		</div>
+		<div class="inventions">
+			<ul>
+				{% for invention in inventions %}
+					{% include 'partial/invention-tease.twig' %}
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+{% endblock %}
