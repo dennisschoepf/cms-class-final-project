@@ -1,5 +1,11 @@
-<section id="about" class="maxwidthcontainer">
-	{{ post.about_title }}
-	{{ post.about_text }}
-	<img src="{{ Image(post.meta('about_image')).src }}"/>
+<section id="about">
+	<img class="waves" src="{{ theme.link }}/images/waves.svg"/>
+	<div>
+		<article class="maxwidthcontainer">
+			<h2>{{ post.about_title }}</h2>
+			<img src="{{ Image(post.meta('about_image')).src }}"/>
+			<p>{{ post.about_text }}</p>
+		</article>
+	</div>
+	<img class="waves upside-down" src="{{ theme.link }}/images/waves.svg"/>
 </section>

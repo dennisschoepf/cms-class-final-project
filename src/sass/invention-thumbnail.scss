@@ -1,0 +1,48 @@
+.inventions-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+
+  .invention-thumbnail {
+    width: 48%;
+    margin-bottom: 4.5rem;
+
+    a {
+      height: 32rem;
+      display: block;
+      text-decoration: none;
+      color: $color-black;
+      border-radius: 15px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+      transition: 0.3s all ease-out;
+
+      &:hover {
+        box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.2);
+      }
+
+      img {
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+
+      h3 {
+        padding: 3rem 1.5rem 0 1.5rem;
+        font-size: $font-size-l;
+        font-weight: $font-weight-bold;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        padding: 0 1.5rem 3rem 1.5rem;
+      }
+    }
+
+    @include breakpoint(0, 90rem) {
+      width: 100%;
+    }
+  }
+}

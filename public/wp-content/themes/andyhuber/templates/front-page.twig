@@ -11,6 +11,12 @@
 					{% include 'partial/invention-tease.twig' %}
 				{% endif %}
 			{% endfor %}
+			<li class="show-all">
+				<a href={{ Post(post.inventions_link).link }}>
+					<img src="{{ theme.link }}/images/inventions_more.svg"/>
+					<p>{{ post.inventions_link_text }}</p>
+				</a>
+			</li>
 		</ul>
 	</section>
 	<section id="stories" class="maxwidthcontainer home-section">

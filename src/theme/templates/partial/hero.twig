@@ -1,7 +1,10 @@
 <section id="hero" class="maxwidthcontainer">
-	{{ post.hero_subtitle }}
-	<h1>{{ post.hero_title }}</h1>
-	<a href="{{ Post(post.hero_cta_link).link }}">
-		{{ post.hero_cta_text }}
-	</a>
+	<img class="hero-image" src="{{ theme.link }}/images/hero_img.svg"/>
+	<div class="hero-text">
+		<p>{{ post.hero_subtitle }}</p>
+		<h1>{{ post.hero_title }}</h1>
+		<a class="button" href="{{ Post(post.hero_cta_link).link }}">
+			{{ post.hero_cta_text }}
+		</a>
+	</div>
 </section>
