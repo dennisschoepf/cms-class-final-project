@@ -5,8 +5,24 @@
 </head>{% endblock %}<body class="{{body_class}}" data-template="base.twig">
 {% block header %}
 	<header>
+		<h1 class="logo">Andy Huber</h1>
 		<nav id="nav-main" class="nav-main" role="navigation">
-			{% include "menu.twig" with {'items': menu.get_items} %}
+			<ul>
+				{% for item in header_menu.items %}
+					<li>
+						<a class="{% if item.current %}{{ 'active' }}{% endif %}" href="{{ item.link }}">{{ item.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
 		</nav>
 	</header>
-{% endblock %}</body>{% block content %}Sorry, no content{% endblock %}</div>{% if sidebar %}<aside class="layout-sidebar">{{sidebar}}</aside>{% endif %}</section>{% block footer %}<footer id="footer">{% include 'footer.twig' %}</footer>{{ function('wp_footer') }}{% endblock %}</body></html>
+{% endblock %}</body>{% block content %}Sorry, no content{% endblock %}</div>{% block footer %}<footer id="footer">
+<ul>
+	{% for item in footer_menu.items %}
+		<li>
+			<a href="{{ item.link }}">{{ item.title }}</a>
+		</li>
+	{% endfor %}
+</ul>
+<small>© Andy Huber
+	{{"now"|date('Y')}}</small></footer>{{ function('wp_footer') }}{% endblock %}</body></html>

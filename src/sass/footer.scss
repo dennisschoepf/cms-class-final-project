@@ -1,0 +1,36 @@
+footer {
+  width: 100%;
+  background-color: $color-blue-dark;
+  color: $color-white;
+  padding: 3rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12rem;
+
+  ul {
+    display: flex;
+    margin-bottom: 1.2rem;
+
+    li:first-child {
+      &::after {
+        content: '|';
+        margin-left: 1rem;
+      }
+    }
+
+    li:last-child {
+      margin-left: 1.2rem;
+    }
+
+    li > a {
+      color: $color-white;
+      text-decoration: none;
+    }
+  }
+
+  small {
+    width: 100%;
+  }
+}

@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+
+  h1.logo {
+    font-family: $font-accent;
+    color: $color-blue-dark;
+  }
+
+  nav > ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    li > a {
+      color: $color-black;
+      text-decoration: none;
+
+      &:hover,
+      &.active {
+        border-bottom: 3px solid $color-dark-blue;
+      }
+    }
+
+    li:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}

@@ -21,7 +21,7 @@ $context['stories'] = Timber::get_posts($stories_args);
 $context['post'] = Timber::get_post();
 
 /*echo "<pre>";
-print_r($context['inventions']);
+print_r($context['header-menu']);
 echo "</pre>";*/
 
 Timber::render('front-page.twig', $context);
