@@ -4,14 +4,12 @@ $context = Timber::context();
 $stories_args = array(
   'post_type' => 'post',
   'category_name' => 'stories',
-  'numberposts' => 3,
   'order' => 'DESC'
 );
 
 $inventions_args = array(
   'post_type' => 'post',
   'category_name' => 'inventions',
-  'numberposts' => 3,
   'order' => 'DESC'
 );
 

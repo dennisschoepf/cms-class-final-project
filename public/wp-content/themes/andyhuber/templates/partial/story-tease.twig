@@ -1,8 +1,10 @@
-<li class="invention-thumbnail">
+<li class="story-thumbnail">
 	<a href="{{ story.link }}">
-		<h4>{{ story.thumbnail_title}}
-			<h3>{{ story.post_title }}</h3>
-			<p>{{ story.thumbnail_text }}</p>
-		</a>
-	</li>
+		<img src="{{ Image(story.meta('main_image')).src }}"/>
+		<div class="story-content">
+			<p class="story-subtitle">{{ story.thumbnail_title}}</p>
+			<h3 class="story-title">{{ story.post_title }}</h3>
+			<p class="story-thumbnail-text">{{ story.thumbnail_text }}</p>
+		</div>
+	</a>
 </li>

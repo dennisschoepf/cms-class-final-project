@@ -26,5 +26,6 @@
 				{% include 'partial/story-tease.twig' %}
 			{% endfor %}
 		</ul>
+		<a class="further-stories" href="{{ Post(post.stories_link).link }}">{{ post.stories_link_text }}</a>
 	</section>
 {% endblock %}

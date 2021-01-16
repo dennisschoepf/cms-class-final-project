@@ -54,11 +54,13 @@ html {
   font-size: 10px;
   font-weight: $font-weight;
   background-color: white;
+  overflow-x: hidden;
 }
 
 body {
   font-size: $font-size-m;
   background-color: white;
+  overflow-x: hidden;
 }
 
 h1,
@@ -67,10 +69,14 @@ h2 {
   line-height: $line-height-xxl;
   font-weight: $font-weight-bold;
 
-  @include breakpoint(0, 50rem) {
+  @include breakpoint(0, 500px) {
     font-size: $font-size-xl;
     line-height: $line-height-xl;
   }
+}
+
+#page-content {
+  margin-top: 12rem;
 }
 
 .button {

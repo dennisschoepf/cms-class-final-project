@@ -41,7 +41,7 @@
       }
     }
 
-    @include breakpoint(0, 90rem) {
+    @include breakpoint(0, 900px) {
       width: 100%;
     }
   }

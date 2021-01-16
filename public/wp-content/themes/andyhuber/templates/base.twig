@@ -6,7 +6,12 @@
 {% block header %}
 	<header>
 		<h1 class="logo">Andy Huber</h1>
-		<nav id="nav-main" class="nav-main" role="navigation">
+		<button id="menu-trigger" class="hamburger hamburger--collapse" type="button">
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+		</button>
+		<nav id="menu" class="nav-main" role="navigation">
 			<ul>
 				{% for item in header_menu.items %}
 					<li>
@@ -16,7 +21,7 @@
 			</ul>
 		</nav>
 	</header>
-{% endblock %}</body>{% block content %}Sorry, no content{% endblock %}</div>{% block footer %}<footer id="footer">
+{% endblock %}</body>{% block content %}Sorry, no content{% endblock %}</div>{% block footer %}<img class="waves" src="{{ theme.link }}/images/waves.svg"/><footer id="footer">
 <ul>
 	{% for item in footer_menu.items %}
 		<li>

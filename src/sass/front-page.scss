@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 10rem;
+  margin-top: 26rem;
   margin-bottom: 20rem;
 
   .hero-image {
@@ -24,7 +24,22 @@
     }
   }
 
-  @include breakpoint(50rem, 90rem) {
+  @include breakpoint(0, 500px) {
+    margin-top: 16rem;
+
+    .hero-image {
+      width: 85%;
+      margin: auto;
+    }
+
+    .hero-text {
+      width: 100%;
+      padding: 0;
+      margin: 3rem auto 0;
+      text-align: center;
+    }
+  }
+  @include breakpoint(500px, 900px) {
     .hero-image {
       width: 60%;
       margin: auto;
@@ -37,25 +52,10 @@
       text-align: center;
     }
   }
-
-  @include breakpoint(0, 50rem) {
-    .hero-image {
-      width: 85%;
-      margin: auto;
-    }
-
-    .hero-text {
-      width: 100%;
-      padding: 0;
-      margin: 3rem auto 0;
-      text-align: center;
-      margin: auto;
-    }
-  }
 }
 
 .waves {
-  width: 105%;
+  width: 100%;
   height: auto;
 }
 
@@ -98,7 +98,7 @@
         line-height: 3.6rem;
       }
 
-      @include breakpoint(0, 90rem) {
+      @include breakpoint(0, 900px) {
         img {
           width: 100%;
           margin-bottom: 3rem;
@@ -135,7 +135,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: $color-black;
+      color: $color-blue-dark;
+      font-weight: $font-weight-bold;
       text-decoration: none;
       transition: 0.3s all ease-out;
 
@@ -148,7 +149,7 @@
       }
     }
 
-    @include breakpoint(0, 90rem) {
+    @include breakpoint(0, 900px) {
       width: 100%;
     }
   }
@@ -157,6 +158,10 @@
 #stories {
   margin-top: 10rem;
   margin-bottom: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
 
   h2 {
     text-align: center;
@@ -165,5 +170,11 @@
 
   .stories-list {
     color: red;
+  }
+
+  .further-stories {
+    text-align: center;
+    color: $color-black;
+    margin-top: 6rem;
   }
 }

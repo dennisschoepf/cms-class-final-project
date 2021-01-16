@@ -1,32 +1,108 @@
 header {
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+  top: 0;
   display: flex;
   justify-content: space-between;
   padding: 1.5rem;
+  background-color: $color-white;
+  transition: all 0.25s ease-out;
+
+  &.shrink {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    h1 {
+      transform: scale(0.8) translateX(-30px);
+    }
+  }
 
   h1.logo {
     font-family: $font-accent;
     color: $color-blue-dark;
+    z-index: 200;
+    transition: all 0.25s ease-out;
   }
 
-  nav > ul {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+  #menu-trigger {
+    position: relative;
+    right: 1.5rem;
+    z-index: 100;
 
-    li > a {
-      color: $color-black;
-      text-decoration: none;
+    @include breakpoint(950px) {
+      display: none;
+    }
+  }
 
-      &:hover,
-      &.active {
-        border-bottom: 3px solid $color-blue-dark;
+  nav {
+    position: relative;
+    right: 3rem;
+
+    ul {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+
+      li > a {
+        color: $color-black;
+        text-decoration: none;
+
+        &:hover,
+        &.active {
+          border-bottom: 3px solid $color-blue-dark;
+        }
+      }
+
+      li:not(:last-child) {
+        margin-right: 3.5rem;
       }
     }
 
-    li:not(:last-child) {
-      margin-right: 3.5rem;
+    @include breakpoint(0, 950px) {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: -100%;
+      transition: all 0.5s ease-out;
+      background-color: $color-white;
+      z-index: 10;
+
+      ul {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+
+        li {
+          width: 100%;
+          padding: 3rem 0;
+          text-align: center;
+
+          a {
+            font-size: $font-size-xl;
+            font-weight: $font-weight-bold;
+          }
+        }
+      }
+
+      &.open {
+        transform: translate3d(-100%, 0, 0);
+      }
     }
+  }
+
+  @include breakpoint(0, 950px) {
+    align-items: center;
+    #menu-trigger {
+      position: relative;
+      right: 3rem;
+    }
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::after,
+  .hamburger-inner::before {
+    background-color: $color-blue-dark;
   }
 }
