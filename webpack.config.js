@@ -13,7 +13,7 @@ const themeFolder = `public/wp-content/themes/${themeName}`;
 const phpServerUrl = 'localhost';
 
 module.exports = {
-  entry: { main: './src/index.js', admin: './src/sass/main.scss' },
+  entry: { main: ['./src/index.js', './src/sass/main.scss'] },
   output: {
     path: path.resolve(__dirname, themeFolder),
   },

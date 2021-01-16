@@ -7,7 +7,7 @@ function getHashedStyleSheet()
 	foreach ($dirCSS as $file) {
 		if (pathinfo($file, PATHINFO_EXTENSION) === 'css') {
 			$fullName = basename($file);
-			if (strpos($fullName, 'admin') !== false) {
+			if (strpos($fullName, 'main') !== false) {
 				return $fullName;
 			}
 		}
