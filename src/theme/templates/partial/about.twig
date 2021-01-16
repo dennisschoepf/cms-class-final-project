@@ -3,7 +3,7 @@
 	<div>
 		<article class="maxwidthcontainer">
 			<h2>{{ post.about_title }}</h2>
-			<img src="{{ Image(post.meta('about_image')).src }}"/>
+			<img alt="About Image" src="{{ Image(post.meta('about_image')).src }}"/>
 			<p>{{ post.about_text }}</p>
 		</article>
 	</div>

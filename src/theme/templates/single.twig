@@ -3,16 +3,8 @@
 {% block content %}
 	<section id="single-section" class="content-wrapper maxwidthcontainer">
 		<h1 class="article-h1">{{ post.title }}</h1>
-		<a href="{{ post.link }}">{{ _e('edit') }}</a>
-		<p class="blog-author">
-			<span>By</span>
-			<a href="{{post.author.path}}">
-				{{ post.author.name }}
-			</a>
-			<span>&bull;</span>
-			<time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
-		</p>
-		<div class="article-body test">
+		<img alt="Main Image" src="{{ Image(post.meta('main_image')).src }}"/>
+		<div class="article-body">
 			{{post.content}}
 		</div>
 	</section>
