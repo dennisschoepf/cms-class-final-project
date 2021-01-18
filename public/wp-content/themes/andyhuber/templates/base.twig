@@ -5,7 +5,10 @@
 </head>{% endblock %}<body class="{{body_class}}" data-template="base.twig">
 {% block header %}
 	<header>
-		<h1 class="logo">Andy Huber</h1>
+		<a href="{{ site.url }}">
+			<h1 class="logo">
+				Andy Huber</h1>
+		</a>
 		<button id="menu-trigger" class="hamburger hamburger--collapse" type="button">
 			<span class="hamburger-box">
 				<span class="hamburger-inner"></span>
@@ -36,4 +39,4 @@
 			{{"now"|date('Y')}}</small>
 	</footer>
 	{{ function('wp_footer') }}
-{% endblock %}</body></html>
+{% endblock %}</body></body></html>
