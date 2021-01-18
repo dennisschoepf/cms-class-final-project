@@ -1,9 +1,16 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<section id="single-section" class="content-wrapper maxwidthcontainer">
-		<h1 class="article-h1">{{ post.title }}</h1>
+	<div class="single-hero-container">
+		<h1 class="article-h1">
+			{% if post.thumbnail_title %}
+				<span class="subtitle-post">{{ post.thumbnail_title }}</span>
+			{% endif %}
+			{{ post.title }}</h1>
 		<img alt="Main Image" src="{{ Image(post.meta('main_image')).src }}"/>
+	</div>
+
+	<section id="single-section" class="content-wrapper maxwidthcontainer">
 		<div class="article-body">
 			{{post.content}}
 		</div>

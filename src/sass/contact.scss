@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 80rem;
-  margin: auto;
+  margin: 4rem auto auto;
   padding: 1.5rem;
 
   p {
@@ -11,16 +10,28 @@
     margin-bottom: 3rem;
 
     label {
+      display: block;
+      max-width: 100%;
+
       .wpcf7-form-control-wrap {
         margin-top: 1rem;
         display: block;
 
         input,
         textarea {
+          font-size: 2rem;
+          font-family: $font-reg;
           border: 2px solid $color-grey;
           padding: 1rem 1.5rem;
           border-radius: 5px;
-          max-width: 90%;
+          transition: all 0.3s ease-out;
+          width: calc(
+            100% - 3rem
+          ) !important; // Fix wpcf7 weird size attribute behavior
+
+          &:focus {
+            border: 3px solid $color-blue-dark;
+          }
         }
       }
     }

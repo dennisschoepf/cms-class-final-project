@@ -1,5 +1,13 @@
 section#page-content {
-  padding-top: 8rem;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .page-hero-image {
+    max-width: 320px;
+    margin-bottom: 10rem;
+  }
 
   h1.article-h1 {
     text-align: center;
@@ -7,6 +15,12 @@ section#page-content {
   }
 
   .article-body {
-    margin-bottom: 3rem;
+    max-width: 100%;
+    margin-bottom: 9rem;
+  }
+
+  .stories,
+  .inventions {
+    margin-bottom: 20rem;
   }
 }

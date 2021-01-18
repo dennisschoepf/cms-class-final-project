@@ -2,17 +2,10 @@
 
 {% block content %}
 	<section id="page-content" class="maxwidthcontainer">
-		<img class="page-hero-image" src="{{ theme.link }}/images/success.svg"/>
+		<img class="page-hero-image" src="{{ theme.link }}/images/contact.svg"/>
 		<h1 class="article-h1">{{post.title}}</h1>
 		<div class="article-body">
 			{{post.content}}
-		</div>
-		<div class="stories">
-			<ul>
-				{% for story in stories %}
-					{% include 'partial/story-tease.twig' %}
-				{% endfor %}
-			</ul>
 		</div>
 	</section>
 {% endblock %}
